@@ -573,7 +573,8 @@ footer {
 
 .category-filters,
 .day-filters,
-.time-filters {
+.time-filters,
+.difficulty-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -581,7 +582,8 @@ footer {
 
 .category-filter,
 .day-filter,
-.time-filter {
+.time-filter,
+.difficulty-filter {
   background-color: var(--background);
   border: 1px solid var(--border);
   color: var(--text-primary);
@@ -594,7 +596,8 @@ footer {
 
 .category-filter.active,
 .day-filter.active,
-.time-filter.active {
+.time-filter.active,
+.difficulty-filter.active {
   background-color: var(--primary);
   color: white;
   border-color: var(--primary-dark);
@@ -602,7 +605,8 @@ footer {
 
 .category-filter:hover,
 .day-filter:hover,
-.time-filter:hover {
+.time-filter:hover,
+.difficulty-filter:hover {
   background-color: var(--primary-light);
   color: white;
 }
@@ -723,4 +727,79 @@ footer {
 
 #dark-mode-toggle .icon {
   font-size: 1.2rem;
+/* Social sharing buttons */
+.share-buttons {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+}
+
+.share-button {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.share-button.twitter {
+  color: #1DA1F2;
+  border-color: #1DA1F2;
+}
+
+.share-button.twitter:hover {
+  background-color: #1DA1F2;
+  color: white;
+}
+
+.share-button.facebook {
+  color: #1877F2;
+  border-color: #1877F2;
+}
+
+.share-button.facebook:hover {
+  background-color: #1877F2;
+  color: white;
+}
+
+.share-button.email {
+  color: #EA4335;
+  border-color: #EA4335;
+}
+
+.share-button.email:hover {
+  background-color: #EA4335;
+  color: white;
+}
+
+.share-button.link {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.share-button.link:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.share-label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-right: 4px;
 }

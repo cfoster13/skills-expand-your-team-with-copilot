@@ -41,7 +41,8 @@ initial_activities = {
             "end_time": "16:45"
         },
         "max_participants": 12,
-        "participants": ["michael@mergington.edu", "daniel@mergington.edu"]
+        "participants": ["michael@mergington.edu", "daniel@mergington.edu"],
+        "difficulty": "Beginner"
     },
     "Programming Class": {
         "description": "Learn programming fundamentals and build software projects",
@@ -52,7 +53,8 @@ initial_activities = {
             "end_time": "08:00"
         },
         "max_participants": 20,
-        "participants": ["emma@mergington.edu", "sophia@mergington.edu"]
+        "participants": ["emma@mergington.edu", "sophia@mergington.edu"],
+        "difficulty": "Beginner"
     },
     "Morning Fitness": {
         "description": "Early morning physical training and exercises",
@@ -74,7 +76,8 @@ initial_activities = {
             "end_time": "17:30"
         },
         "max_participants": 22,
-        "participants": ["liam@mergington.edu", "noah@mergington.edu"]
+        "participants": ["liam@mergington.edu", "noah@mergington.edu"],
+        "difficulty": "Intermediate"
     },
     "Basketball Team": {
         "description": "Practice and compete in basketball tournaments",
@@ -118,7 +121,8 @@ initial_activities = {
             "end_time": "08:00"
         },
         "max_participants": 10,
-        "participants": ["james@mergington.edu", "benjamin@mergington.edu"]
+        "participants": ["james@mergington.edu", "benjamin@mergington.edu"],
+        "difficulty": "Advanced"
     },
     "Debate Team": {
         "description": "Develop public speaking and argumentation skills",
@@ -129,7 +133,8 @@ initial_activities = {
             "end_time": "17:30"
         },
         "max_participants": 12,
-        "participants": ["charlotte@mergington.edu", "amelia@mergington.edu"]
+        "participants": ["charlotte@mergington.edu", "amelia@mergington.edu"],
+        "difficulty": "Intermediate"
     },
     "Weekend Robotics Workshop": {
         "description": "Build and program robots in our state-of-the-art workshop",
@@ -140,7 +145,8 @@ initial_activities = {
             "end_time": "14:00"
         },
         "max_participants": 15,
-        "participants": ["ethan@mergington.edu", "oliver@mergington.edu"]
+        "participants": ["ethan@mergington.edu", "oliver@mergington.edu"],
+        "difficulty": "Advanced"
     },
     "Science Olympiad": {
         "description": "Weekend science competition preparation for regional and state events",
@@ -163,6 +169,17 @@ initial_activities = {
         },
         "max_participants": 16,
         "participants": ["william@mergington.edu", "jacob@mergington.edu"]
+    },
+    "Manga Maniacs": {
+        "description": "Dive into epic adventures, unforgettable friendships, and incredible plot twists! Join us to discuss your favorite manga series, discover hidden gems, and unleash your inner artist by creating your own manga characters. Whether you're into shonen action, shojo romance, or seinen mysteries—all manga fans are welcome!",
+        "schedule": "Tuesdays, 7:00 PM - 8:00 PM",
+        "schedule_details": {
+            "days": ["Tuesday"],
+            "start_time": "19:00",
+            "end_time": "20:00"
+        },
+        "max_participants": 15,
+        "participants": []
     }
 }
 
