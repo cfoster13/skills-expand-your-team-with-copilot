@@ -8,7 +8,6 @@ for extracurricular activities at Mergington High School.
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
-import os
 from pathlib import Path
 from .backend import routers, database
 
@@ -22,8 +21,8 @@ app = FastAPI(
 database.init_database()
 
 # Mount the static files directory for serving the frontend
-current_dir = Path(__file__).parent
-app.mount("/static", StaticFiles(directory=os.path.join(current_dir, "static")), name="static")
+static_dir = Path(__file__).parent / "static"
+app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
 
 # Root endpoint to redirect to static index.html
 @app.get("/")
