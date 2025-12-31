@@ -593,16 +593,16 @@ document.addEventListener("DOMContentLoaded", () => {
       ${capacityIndicator}
       <div class="share-buttons">
         <span class="share-label">Share:</span>
-        <button class="share-button twitter" title="Share on Twitter" data-activity="${name}">
+        <button class="share-button twitter" title="Share on Twitter" aria-label="Share on Twitter" data-activity="${name}">
           𝕏
         </button>
-        <button class="share-button facebook" title="Share on Facebook" data-activity="${name}">
+        <button class="share-button facebook" title="Share on Facebook" aria-label="Share on Facebook" data-activity="${name}">
           f
         </button>
-        <button class="share-button email" title="Share via Email" data-activity="${name}">
+        <button class="share-button email" title="Share via Email" aria-label="Share via Email" data-activity="${name}">
           ✉
         </button>
-        <button class="share-button link" title="Copy link" data-activity="${name}">
+        <button class="share-button link" title="Copy link" aria-label="Copy link" data-activity="${name}">
           🔗
         </button>
       </div>
@@ -656,38 +656,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Add click handlers for share buttons
-    const twitterButton = activityCard.querySelector(".share-button.twitter");
-    const facebookButton = activityCard.querySelector(".share-button.facebook");
-    const emailButton = activityCard.querySelector(".share-button.email");
-    const linkButton = activityCard.querySelector(".share-button.link");
+    const shareButtons = [
+      { selector: ".share-button.twitter", handler: () => shareOnTwitter(name, details.description) },
+      { selector: ".share-button.facebook", handler: () => shareOnFacebook(name, details.description) },
+      { selector: ".share-button.email", handler: () => shareViaEmail(name, details.description, formattedSchedule) },
+      { selector: ".share-button.link", handler: () => copyLinkToClipboard(name, details.description) }
+    ];
 
-    if (twitterButton) {
-      twitterButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        shareOnTwitter(name, details.description);
-      });
-    }
-
-    if (facebookButton) {
-      facebookButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        shareOnFacebook(name, details.description);
-      });
-    }
-
-    if (emailButton) {
-      emailButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        shareViaEmail(name, details.description, formattedSchedule);
-      });
-    }
-
-    if (linkButton) {
-      linkButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        copyLinkToClipboard(name, details.description);
-      });
-    }
+    shareButtons.forEach(({ selector, handler }) => {
+      const button = activityCard.querySelector(selector);
+      if (button) {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          handler();
+        });
+      }
+    });
 
     // Add click handler for register button (only when authenticated)
     if (currentUser) {
